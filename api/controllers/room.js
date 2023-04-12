@@ -4,20 +4,26 @@ import { createError } from "../utils/error.js";
 
 export const createRoom = async (req, res, next) => {
   const hotelId = req.params.hotelid;
-  const newRoom = new Room(req.body);
 
-  try {
-    const savedRoom = await newRoom.save();
+  const hotel = await Hotel.findById(hotelId);
+  if (hotel) {
     try {
-      await Hotel.findByIdAndUpdate(hotelId, {
-        $push: { rooms: savedRoom._id },
-      });
+      const newRoom = new Room(req.body);
+      const savedRoom = await newRoom.save();
+
+      try {
+        await Hotel.findByIdAndUpdate(hotelId, {
+          $push: { rooms: savedRoom._id },
+        });
+      } catch (err) {
+        next(err);
+      }
+      res.status(200).json(savedRoom);
     } catch (err) {
       next(err);
     }
-    res.status(200).json(savedRoom);
-  } catch (err) {
-    next(err);
+  } else {
+    res.status(404).json(`no hotel by is registered by id = ${hotelId}`);
   }
 };
 
@@ -39,7 +45,7 @@ export const updateRoomAvailability = async (req, res, next) => {
       { "roomNumbers._id": req.params.id },
       {
         $push: {
-          "roomNumbers.$.unavailableDates": req.body.dates
+          "roomNumbers.$.unavailableDates": req.body.dates,
         },
       }
     );
