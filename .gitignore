@@ -1,4 +1,7 @@
 /api/.env
-api/.env
+/frontend/.env
+/admin/.env
 .env
 /api/node_modules
+/frontend/node_modules
+/admin/node_modules
