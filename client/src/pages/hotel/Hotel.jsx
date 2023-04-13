@@ -15,12 +15,17 @@ import useFetch from "../../hooks/useFetch";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
+// import Reserve from "../../components/reserve/Reserve";
 
 const Hotel = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+
+  const { user } = useContext(AuthContext);
 
   const photos = [
     {
@@ -58,6 +63,14 @@ const Hotel = () => {
     }
 
     setSlideNumber(newSlideNumber);
+  };
+
+  const handleClick = () => {
+    if (user) {
+      setOpenModal(true);
+    } else {
+      navigate("/login");
+    }
   };
 
   const { data, loading, error } = useFetch(`/hotels/find/${id}`);
