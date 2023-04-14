@@ -9,16 +9,20 @@ import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "../../hooks/useFetch";
 const List = () => {
   const location = useLocation();
-  console.log(location);
+
   const [city, setCity] = useState(location.state.city);
-  const [dates, setDates] = useState(location.state.date);
+  const [type, setType] = useState();
+  const [dates, setDates] = useState(location.state.dates);
+  // console.log(dates);
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
 
   //&min=${min || 0 }&max=${max || 3000}
-  const { data, loading, error, reFetch } = useFetch(`/hotels?city=${city}`);
+  const { data, loading, error, reFetch } = useFetch(
+    `/hotels?city=${city}&type=${type}`
+  );
   // console.log(data);
   const handleClick = () => {
     reFetch();
@@ -34,7 +38,21 @@ const List = () => {
             <h1 className="lsTitle">Search</h1>
             <div className="lsItem">
               <label>City</label>
-              <input placeholder={city} type="text" />
+              <input
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                type="text"
+              />
+            </div>
+            <div className="lsItem">
+              <label>Type</label>
+              <input
+                value={type}
+                onChange={(e) => {
+                  setType(e.target.value);
+                }}
+                type="text"
+              />
             </div>
             <div className="lsItem">
               <label>Check-in Date</label>

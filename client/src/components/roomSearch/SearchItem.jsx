@@ -6,9 +6,9 @@ const SearchItem = ({ item }) => {
     <div className="searchItem">
       <img src={item.length && item.photos[0]} alt="" className="siImg" />
       <div className="siDesc">
-        <h1 className="siTitle">{item.name}</h1>
-        <span className="siDistance">{item.distance}m from center</span>
-        <span className="siTaxiOp">Free airport taxi</span>
+        <h1 className="siTitle">{item.title}</h1>
+
+        <span className="siTaxiOp">{item.maxPeople} people can set</span>
         <span className="siSubtitle">
           Studio Apartment with Air conditioning
         </span>
@@ -32,6 +32,7 @@ const SearchItem = ({ item }) => {
             <button className="siCheckButton">See availability</button>
           </Link>
         </div>
+        <span className="siCheckButton">{item.price}ETB</span>
       </div>
     </div>
   );

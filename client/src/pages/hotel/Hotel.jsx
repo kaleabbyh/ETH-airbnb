@@ -1,4 +1,5 @@
 import "./hotel.css";
+
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
@@ -16,6 +17,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
+import SearchItem from "../../components/roomSearch/SearchItem";
 
 const Hotel = () => {
   const location = useLocation();
@@ -25,6 +27,9 @@ const Hotel = () => {
   const [openModal, setOpenModal] = useState(false);
 
   const { data, loading, error } = useFetch(`/hotels/find/${id}`);
+  const roomData = useFetch(`/hotels/room/64367b2b5431ed5b649bfdbf`);
+  console.log(data);
+
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -34,10 +39,12 @@ const Hotel = () => {
   function dayDifference(date1, date2) {
     const timeDiff = Math.abs(date2.getTime() - date1.getTime());
     const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
-    return diffDays;
+    return diffDays + 1;
   }
 
-  const days = dayDifference(dates[0].endDate, dates[0].startDate);
+  const days = dates.length
+    ? dayDifference(dates[0].endDate, dates[0].startDate)
+    : 0;
 
   const handleOpen = (i) => {
     setSlideNumber(i);
@@ -108,8 +115,7 @@ const Hotel = () => {
               Excellent location – {data.distance}m from center
             </span>
             <span className="hotelPriceHighlight">
-              Book a stay over ${data.cheapestPrice} at this property and get a
-              free airport taxi
+              Book a stay here at this property and get a free airport taxi
             </span>
             <div className="hotelImages">
               {data.photos?.map((photo, i) => (
@@ -134,10 +140,20 @@ const Hotel = () => {
                   Located in the real heart of Krakow, this property has an
                   excellent location score of 9.8!
                 </span>
-                <h2>
-                  <b>${days * data.cheapestPrice * options.room}</b> ({days}{" "}
-                  nights)
-                </h2>
+
+                <h4>
+                  reserve you home starting from{" "}
+                  <i
+                    style={{
+                      backgroundColor: "lightblue",
+                      padding: "2px",
+                      margin: "2px",
+                    }}
+                  >
+                    {data.cheapestPrice} ETB
+                  </i>{" "}
+                  for a night
+                </h4>
                 <button onClick={handleClick}>Reserve or Book Now!</button>
               </div>
             </div>
@@ -147,6 +163,110 @@ const Hotel = () => {
         </div>
       )}
       {openModal && <Reserve setOpen={setOpenModal} hotelId={id} />}
+      <div className="listContainer">
+        <div className="listWrapper">
+          <div className="listSearch">
+            <h1 className="lsTitle">Search</h1>
+            <div className="lsItem">
+              <label>City</label>
+              <input
+                // value={city}
+                // onChange={(e) => setCity(e.target.value)}
+                type="text"
+              />
+            </div>
+            <div className="lsItem">
+              <label>Type</label>
+              <input
+                // value={type}
+                // onChange={(e) => setType(e.target.value)}
+                type="text"
+              />
+            </div>
+            <div className="lsItem">
+              {/* <label>Check-in Date</label>
+              {dates && dates.length > 0 && (
+                <span onClick={() => setOpenDate(!openDate)}>{`${format(
+                  dates[0].startDate,
+                  "MM/dd/yyyy"
+                )} to ${format(dates[0].endDate, "MM/dd/yyyy")}`}</span>
+              )} */}
+
+              {/* {openDate && (
+                <DateRange
+                  onChange={(item) => setDates([item.selection])}
+                  minDate={new Date()}
+                  ranges={dates}
+                />
+              )} */}
+            </div>
+            <div className="lsItem">
+              <label>Options</label>
+              <div className="lsOptions">
+                <div className="lsOptionItem">
+                  <span className="lsOptionText">
+                    Min price <small>per night</small>
+                  </span>
+                  <input
+                    type="number"
+                    // onChange={(e) => setMin(e.target.value)}
+                    className="lsOptionInput"
+                  />
+                </div>
+                <div className="lsOptionItem">
+                  <span className="lsOptionText">
+                    Max price <small>per night</small>
+                  </span>
+                  <input
+                    type="number"
+                    // onChange={(e) => setMax(e.target.value)}
+                    className="lsOptionInput"
+                  />
+                </div>
+                <div className="lsOptionItem">
+                  <span className="lsOptionText">Adult</span>
+                  <input
+                    type="number"
+                    min={1}
+                    className="lsOptionInput"
+                    placeholder={options.adult}
+                  />
+                </div>
+                <div className="lsOptionItem">
+                  <span className="lsOptionText">Children</span>
+                  <input
+                    type="number"
+                    min={0}
+                    className="lsOptionInput"
+                    placeholder={options.children}
+                  />
+                </div>
+                <div className="lsOptionItem">
+                  <span className="lsOptionText">Room</span>
+                  <input
+                    type="number"
+                    min={1}
+                    className="lsOptionInput"
+                    placeholder={options.room}
+                  />
+                </div>
+              </div>
+            </div>
+            <button onClick={handleClick}>Search</button>
+          </div>
+          <div className="listResult">
+            {loading ? (
+              "loading"
+            ) : (
+              <>
+                {roomData.data.map((item) => (
+                  <SearchItem item={item} key={item._id} />
+                ))}
+              </>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
