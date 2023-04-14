@@ -3,7 +3,7 @@ import useFetch from "../../hooks/useFetch";
 
 const Featured = () => {
   const { data, loading, error } = useFetch(
-    "/hotels/countByCity?cities=adama,addis ababa"
+    "/hotels/countByCity?cities=adama,addis ababa,hawasa"
   );
 
   return (
@@ -43,7 +43,7 @@ const Featured = () => {
             />
             <div className="featuredTitles">
               <h1>hawasa</h1>
-              <h2>0 properties</h2>
+              <h2>{data[2]} properties</h2>
             </div>
           </div>
         </>

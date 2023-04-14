@@ -10,17 +10,15 @@ import useFetch from "../../hooks/useFetch";
 const List = () => {
   const location = useLocation();
   console.log(location);
-  const [destination, setDestination] = useState(location.state.destination);
+  const [city, setCity] = useState(location.state.city);
   const [dates, setDates] = useState(location.state.date);
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
 
-  //&min=${min || 0 }&max=${max || 999}
-  const { data, loading, error, reFetch } = useFetch(
-    `/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
-  );
+  //&min=${min || 0 }&max=${max || 3000}
+  const { data, loading, error, reFetch } = useFetch(`/hotels?city=${city}`);
   // console.log(data);
   const handleClick = () => {
     reFetch();
@@ -35,8 +33,8 @@ const List = () => {
           <div className="listSearch">
             <h1 className="lsTitle">Search</h1>
             <div className="lsItem">
-              <label>Destination</label>
-              <input placeholder={destination} type="text" />
+              <label>City</label>
+              <input placeholder={city} type="text" />
             </div>
             <div className="lsItem">
               <label>Check-in Date</label>
