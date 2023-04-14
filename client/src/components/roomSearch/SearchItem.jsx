@@ -30,6 +30,7 @@ const SearchItem = ({ item }) => {
           <span className="siTaxOp">Includes taxes and fees</span>
           <Link to={`/hotels/${item._id}`}>
             <button className="siCheckButton">See availability</button>
+            {/* <button onClick={handleClick}>Reserve or Book Now!</button> */}
           </Link>
         </div>
         <span className="siCheckButton">{item.price}ETB</span>
