@@ -48,6 +48,7 @@ const Hotel = () => {
     setOpen(true);
   };
 
+  // slider manage using hand move function
   const handleMove = (direction) => {
     let newSlideNumber;
 
