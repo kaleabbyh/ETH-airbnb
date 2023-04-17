@@ -1,20 +1,57 @@
 import landing from "../assets/images/landing.jpg";
+const links = [
+  { name: "Open roles", href: "#" },
+  { name: "Internship program", href: "#" },
+  { name: "Our values", href: "#" },
+  { name: "Meet our leadership", href: "#" },
+];
+const stats = [
+  { name: "Hotels", value: "12" },
+  { name: "Guests", value: "300+" },
+  { name: "Apartments", value: "40" },
+  { name: "Resorts", value: "Unlimited" },
+];
+
 import { CheckIcon } from "@heroicons/react/20/solid";
 import Header from "../components/Header";
 
 const includedFeatures = ["Guest houses", "Resorts", "Hotels", "Apartaments"];
 
-export default function Example() {
+export default function LandingPage() {
   return (
     <div className="">
       <Header />
 
-      <div className="bg-white py-24 sm:py-28">
+      <div className="p-5">
         <div className="mx-auto  px-6 lg:px-8">
-          <img src={landing} alt="" className="w-full rounded-lg" />
+          <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 opacity-90">
+            <img
+              src={landing}
+              alt=""
+              className="absolute inset-0 -z-10 h-full rounded-lg w-full object-cover object-right md:object-center"
+            />
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <div className="mx-auto max-w-2xl lg:mx-0">
+                <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                  Book Here
+                </h2>
+              </div>
+              <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+                <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+                  {stats.map((stat) => (
+                    <div key={stat.name} className="flex flex-col-reverse">
+                      <dt className="text-4xl font-bold  text-white">
+                        {stat.name}
+                      </dt>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+          </div>
           <div className="mx-auto sm:text-center pt-10">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              your home to book
+              your home
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               you can book now from anywhere any time. save your time
