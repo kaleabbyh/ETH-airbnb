@@ -13,7 +13,7 @@ const ListByType = () => {
           resorts hotels and apartments are here for you
         </h2>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-          you can book now from anywhere any time. save your time
+          Save your time.Book now
         </p>
       </div>
 
@@ -22,14 +22,14 @@ const ListByType = () => {
           <div className="relative ">
             <img className="rounded-lg inline-flex min-h-40 " src={hotel5} />
             <div className="absolute text-center  px-4 py-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <span className="text-2xl py-5 font-bold tracking-tight text-white m-10 ">
-                3000 ETB
+              <span className="block text-2xl px-5 py-2 font-bold  text-white ">
+                3000 hotels
               </span>
               <a
                 href="#"
-                className=" block w-full rounded-md border border-indigo-900  py-2 text-center text-2xl font-semibold text-white "
+                className="block px-5 py-2 text-center rounded-md border border-indigo-900  text-2xl font-semibold text-white "
               >
-                Book now
+                hotels
               </a>
             </div>
           </div>
@@ -38,14 +38,14 @@ const ListByType = () => {
           <div className="relative ">
             <img className="rounded-lg inline-flex min-h-40 " src={hotel6} />
             <div className="absolute text-center  px-4 py-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <span className="text-2xl py-5 font-bold tracking-tight text-white m-10 ">
-                3000 ETB
+              <span className="block text-2xl px-5 py-2 font-bold  text-white ">
+                3000 resorts
               </span>
               <a
                 href="#"
-                className=" block w-full rounded-md border border-indigo-900  py-2 text-center text-2xl font-semibold text-white "
+                className="block px-5 py-2 text-center rounded-md border border-indigo-900  text-2xl font-semibold text-white "
               >
-                Book now
+                resorts
               </a>
             </div>
           </div>
@@ -54,14 +54,14 @@ const ListByType = () => {
           <div className="relative ">
             <img className="rounded-lg inline-flex min-h-40 " src={hotel7} />
             <div className="absolute text-center  px-4 py-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <span className="text-2xl py-5 font-bold tracking-tight text-white m-10 ">
-                3000 ETB
+              <span className="block text-2xl px-5 py-2 font-bold  text-white ">
+                3000 apartaments
               </span>
               <a
                 href="#"
-                className=" block w-full rounded-md border border-indigo-900  py-2 text-center text-2xl font-semibold text-white "
+                className="block px-5 py-2 text-center rounded-md border border-indigo-900  text-2xl font-semibold text-white "
               >
-                Book now
+                apartaments
               </a>
             </div>
           </div>
@@ -70,14 +70,14 @@ const ListByType = () => {
           <div className="relative ">
             <img className="rounded-lg inline-flex min-h-40 " src={hotel8} />
             <div className="absolute text-center  px-4 py-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <span className="text-2xl py-5 font-bold tracking-tight text-white m-10 ">
-                3000 ETB
+              <span className="block text-2xl px-5 py-2 font-bold  text-white ">
+                3000 guest houses
               </span>
               <a
                 href="#"
-                className=" block w-full rounded-md border border-indigo-900  py-2 text-center text-2xl font-semibold text-white "
+                className="block px-5 py-2 text-center rounded-md border border-indigo-900  text-2xl font-semibold text-white "
               >
-                Book now
+                guest houses
               </a>
             </div>
           </div>

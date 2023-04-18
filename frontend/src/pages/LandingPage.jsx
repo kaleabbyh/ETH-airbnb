@@ -16,9 +16,6 @@ export default function LandingPage() {
         >
           Book now
         </Link>
-        <button class="absolute top-10 left-5 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...">
-          Hover me
-        </button>
 
         <Link
           to="/home"

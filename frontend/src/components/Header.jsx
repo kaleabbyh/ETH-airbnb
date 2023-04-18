@@ -12,7 +12,7 @@ const navigation = [
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <div className="inset-x-0 top-0 z-50 shadow-lg">
+    <div className=" inset-x-0 top-0 z-50 shadow-lg">
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
