@@ -1,38 +1,21 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Datepicker from "react-tailwindcss-datepicker";
 import hotel1 from "../assets/images/hotel1.jpg";
 import hotel2 from "../assets/images/hotel2.jpg";
 import hotel3 from "../assets/images/hotel3.jpg";
 import hotel4 from "../assets/images/hotel4.jpg";
+import Header from "../components/Header";
 
 const HotelPage = () => {
   const [date, setDate] = useState({
     startDate: new Date(),
     endDate: new Date().setMonth(11),
   });
-  const [selected, setSelected] = React.useState("");
-  const optionHandler = (event) => {
-    setSelected(event.target.value);
-  };
 
-  const resort = ["Haile resort ", "abcd resort"];
-  const hotel = ["abcd hotel", "efg hotel", "hijk hotel"];
-  const apartment = ["asd apatment", "kafh apatment", "jgj apatment"];
-  let type = null;
-  let options = null;
-
-  if (selected === "resort") {
-    type = resort;
-  } else if (selected === "Hotel") {
-    type = hotel;
-  } else if (selected === "apartment") {
-    type = apartment;
-  }
-
-  if (type) {
-    options = type.map((el) => <option key={el}>{el}</option>);
-  }
-
+  const location = useLocation();
+  console.log(location);
+  // const id = location.pathname.split("/")[2];
   const handleDateChange = (newDate) => {
     console.log("newDate:", newDate);
     setDate(newDate);
@@ -40,26 +23,24 @@ const HotelPage = () => {
 
   return (
     <div>
+      <Header />
+
       <div className="flex">
         <div>
           <aside className="h-100 pb-10 mx-5 mt-10 mb-10  rounded-2xl w-80 bg-yellow-400 top-0 p-5">
-            <h1 className="text-gray-600  pt-5 p-1"> select </h1>
+            <input
+              className="w-full bg-white py-2 rounded-lg px-5 mt-7 "
+              readOnly
+              value={location.state.selected}
+            />
 
-            <select
-              className="w-full bg-white py-2 rounded-lg px-5 mb-3 "
-              onChange={optionHandler}
-            >
-              <option>Choose...</option>
-              <option>resort</option>
-              <option>Hotel</option>
-              <option>apartment</option>
-            </select>
-            <h1 className="text-gray-600  pt-5 p-1"> select </h1>
-            <select className="w-full bg-white py-2 rounded-lg px-5 mb-3 ">
-              {options}
-            </select>
+            <input
+              className="w-full bg-white py-2 rounded-lg px-5 mt-7 "
+              readOnly
+              value={location.state.selectedName}
+            />
 
-            <div className="py-3 ">
+            <div className="py-3 mt-7 ">
               <Datepicker value={date} onChange={handleDateChange} />
             </div>
             <div>
@@ -67,7 +48,7 @@ const HotelPage = () => {
                 type="submit"
                 className="w-full px-5 py-2 rounded-lg text-2xl mt-20 text-white bg-indigo-700 "
               >
-                search
+                book now
               </button>
             </div>
           </aside>
@@ -75,7 +56,7 @@ const HotelPage = () => {
 
         <main className="h-screen overflow-auto w-full pt-10">
           <h2 className="text-2xl text-center font-bold tracking-tight tsm:text-4xl">
-            hotels in bahidar city
+            {location.state.selectedName} is your home
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2  gap-4 w-full  p-4">
             <div className="p-1 md:p-2 rounded-xl shadow">
