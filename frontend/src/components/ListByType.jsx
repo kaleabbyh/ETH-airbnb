@@ -7,7 +7,7 @@ const ListByType = () => {
       <div>
         <div className="mx-auto sm:text-center pt-10">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            your home to book
+            resorts hotels and apartments are here for you
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             you can book now from anywhere any time. save your time
@@ -15,10 +15,10 @@ const ListByType = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-20">
-          <div class="p-1 md:p-2 rounded-xl shadow">
-            <div class="relative ">
+          <div className="p-1 md:p-2 rounded-xl shadow">
+            <div className="relative ">
               <img className="rounded-lg inline-flex min-h-40 " src={landing} />
-              <div class="absolute bottom-0 text-center left-0 right-0 px-4 py-2 bg-black opacity-80">
+              <div className="absolute bottom-0 text-center left-0 right-0 px-4 py-2 bg-black opacity-80">
                 <span className="text-3xl py-5 font-bold tracking-tight text-white m-10 ">
                   3000 ETB
                 </span>
@@ -31,10 +31,10 @@ const ListByType = () => {
               </div>
             </div>
           </div>
-          <div class="p-1 md:p-2 rounded-xl shadow">
-            <div class="relative ">
+          <div className="p-1 md:p-2 rounded-xl shadow">
+            <div className="relative ">
               <img className="rounded-lg inline-flex min-h-40 " src={landing} />
-              <div class="absolute bottom-0 text-center left-0 right-0 px-4 py-2 bg-black opacity-80">
+              <div className="absolute bottom-0 text-center left-0 right-0 px-4 py-2 bg-black opacity-80">
                 <span className="text-3xl py-5 font-bold tracking-tight text-white m-10 ">
                   3000 ETB
                 </span>
@@ -47,10 +47,10 @@ const ListByType = () => {
               </div>
             </div>
           </div>
-          <div class="p-1 md:p-2 rounded-xl shadow">
-            <div class="relative ">
+          <div className="p-1 md:p-2 rounded-xl shadow">
+            <div className="relative ">
               <img className="rounded-lg inline-flex min-h-40 " src={landing} />
-              <div class="absolute bottom-0 text-center left-0 right-0 px-4 py-2 bg-black opacity-80">
+              <div className="absolute bottom-0 text-center left-0 right-0 px-4 py-2 bg-black opacity-80">
                 <span className="text-3xl py-5 font-bold tracking-tight text-white m-10 ">
                   3000 ETB
                 </span>
@@ -63,10 +63,10 @@ const ListByType = () => {
               </div>
             </div>
           </div>
-          <div class="p-1 md:p-2 rounded-xl shadow">
-            <div class="relative ">
+          <div className="p-1 md:p-2 rounded-xl shadow">
+            <div className="relative ">
               <img className="rounded-lg inline-flex min-h-40 " src={landing} />
-              <div class="absolute bottom-0 text-center left-0 right-0 px-4 py-2 bg-black opacity-80">
+              <div className="absolute bottom-0 text-center left-0 right-0 px-4 py-2 bg-black opacity-80">
                 <span className="text-3xl py-5 font-bold tracking-tight text-white m-10 ">
                   3000 ETB
                 </span>
