@@ -5,7 +5,7 @@ import hotel2 from "../assets/images/hotel2.jpg";
 import hotel3 from "../assets/images/hotel3.jpg";
 import hotel4 from "../assets/images/hotel4.jpg";
 
-const CitySearch = () => {
+const HotelPage = () => {
   const [date, setDate] = useState({
     startDate: new Date(),
     endDate: new Date().setMonth(11),
@@ -161,4 +161,4 @@ const CitySearch = () => {
   );
 };
 
-export default CitySearch;
+export default HotelPage;

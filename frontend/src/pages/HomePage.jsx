@@ -9,7 +9,8 @@ import General from "../components/General";
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-b from-indigo-200 to-blue-200 bg-transparent">
+    <div>
+      {/* className="bg-gradient-to-b from-indigo-200 to-blue-200 bg-transparent" */}
       <Header />
       <ListByCity />
       <General />

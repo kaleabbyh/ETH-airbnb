@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import hotel1 from "../assets/images/hotel1.jpg";
 import hotel2 from "../assets/images/hotel2.jpg";
 import hotel3 from "../assets/images/hotel3.jpg";
@@ -38,12 +38,12 @@ const ListByCity = () => {
                 className="ml-5 min-w-0 flex-auto rounded-md border border-indigo-500 px-4"
                 placeholder="Enter city or type"
               />
-              <button
-                type="submit"
+              <Link
+                to="/city/767"
                 className=" text-white flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-indigo-400 "
               >
                 search
-              </button>
+              </Link>
             </div>
           </div>
         </div>
