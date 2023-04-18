@@ -1,21 +1,24 @@
 import React from "react";
 
-import landing from "../assets/images/landing.jpg";
+import hotel1 from "../assets/images/hotel1.jpg";
+import hotel2 from "../assets/images/hotel2.jpg";
+import hotel3 from "../assets/images/hotel3.jpg";
+import hotel4 from "../assets/images/hotel4.jpg";
 
 const ListByCity = () => {
   return (
     <div>
       <div className="mx-auto sm:text-center pt-10">
         <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          browse your home by city
+          choose your city to stay
         </h2>
         <p className="mt-6 text-lg leading-8 text-gray-600">
           you can book now from anywhere any time. save your time
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3">
-        <div className="col-start-1 col-span-1  text-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 ">
+        <div className="col-start-0 col-span-1  text-center">
           <div className="grid grid-cols-1 ">
             <div className="mt-60"></div>
             <h2 className="text-2xl font-bold tracking-tight tsm:text-4xl">
@@ -44,21 +47,21 @@ const ListByCity = () => {
             </div>
           </div>
         </div>
-        <div className="col-start-2 col-span-2">
-          <div className="grid grid-cols-1 lg:grid-cols-2  gap-4 w-full bg-white p-4">
+        <div className="col-start-2 col-span-2 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2  gap-4 w-full  p-4">
             <div className="p-1 md:p-2 rounded-xl shadow">
               <div className="relative ">
                 <img
                   className="rounded-lg inline-flex min-h-40 "
-                  src={landing}
+                  src={hotel1}
                 />
-                <div className="absolute bottom-0 text-center left-0 right-0 px-4 py-2 bg-black opacity-80">
-                  <span className="text-3xl py-5 font-bold tracking-tight text-white m-10 ">
+                <div className="absolute bottom-0 text-center px-4 py-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                  <span className="text-2xl py-5 font-bold tracking-tight text-white m-10 ">
                     3000 ETB
                   </span>
                   <a
                     href="#"
-                    className=" block w-full rounded-md bg-indigo-900  py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className=" block w-full rounded-md border border-indigo-900  py-2 text-center text-2xl font-semibold text-white "
                   >
                     Book now
                   </a>
@@ -69,15 +72,15 @@ const ListByCity = () => {
               <div className="relative ">
                 <img
                   className="rounded-lg inline-flex min-h-40 "
-                  src={landing}
+                  src={hotel2}
                 />
-                <div className="absolute bottom-0 text-center left-0 right-0 px-4 py-2 bg-black opacity-80">
-                  <span className="text-3xl py-5 font-bold tracking-tight text-white m-10 ">
+                <div className="absolute bottom-0 text-center px-4 py-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                  <span className="text-2xl py-5 font-bold tracking-tight text-white m-10 ">
                     3000 ETB
                   </span>
                   <a
                     href="#"
-                    className=" block w-full rounded-md bg-indigo-900  py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className=" block w-full rounded-md border border-indigo-900  py-2 text-center text-2xl font-semibold text-white "
                   >
                     Book now
                   </a>
@@ -88,15 +91,15 @@ const ListByCity = () => {
               <div className="relative ">
                 <img
                   className="rounded-lg inline-flex min-h-40 "
-                  src={landing}
+                  src={hotel3}
                 />
-                <div className="absolute bottom-0 text-center left-0 right-0 px-4 py-2 bg-black opacity-80">
-                  <span className="text-3xl py-5 font-bold tracking-tight text-white m-10 ">
+                <div className="absolute bottom-0 text-center px-4 py-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                  <span className="text-2xl py-5 font-bold tracking-tight text-white m-10 ">
                     3000 ETB
                   </span>
                   <a
                     href="#"
-                    className=" block w-full rounded-md bg-indigo-900  py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className=" block w-full rounded-md border border-indigo-900  py-2 text-center text-2xl font-semibold text-white "
                   >
                     Book now
                   </a>
@@ -107,15 +110,15 @@ const ListByCity = () => {
               <div className="relative ">
                 <img
                   className="rounded-lg inline-flex min-h-40 "
-                  src={landing}
+                  src={hotel4}
                 />
-                <div className="absolute bottom-0 text-center left-0 right-0 px-4 py-2 bg-black opacity-80">
-                  <span className="text-3xl py-5 font-bold tracking-tight text-white m-10 ">
+                <div className="absolute bottom-0 text-center px-4 py-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                  <span className="text-2xl py-5 font-bold tracking-tight text-white m-10 ">
                     3000 ETB
                   </span>
                   <a
                     href="#"
-                    className=" block w-full rounded-md bg-indigo-900  py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className=" block w-full rounded-md border border-indigo-900  py-2 text-center text-2xl font-semibold text-white "
                   >
                     Book now
                   </a>
