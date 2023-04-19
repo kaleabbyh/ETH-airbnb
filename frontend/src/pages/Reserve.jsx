@@ -12,21 +12,17 @@ const beds = [
   ["my ded", "1800", bed3],
   ["abcd bed", "3000", bed4],
 ];
-const HotelPage = () => {
-  const [selected, setSelected] = useState("");
-  const [bedName, setBedNaime] = useState("");
-
+const ReservePage = () => {
   const [date, setDate] = useState({
     startDate: new Date(),
     endDate: new Date().setMonth(11),
   });
-  const navigate = useNavigate();
 
-  const location = useLocation();
-  const type = location.state.selected;
-  const selectedName = location.state.selectedName;
+  //   const location = useLocation();
+  //   const type = location.state.selected;
+  //   const selectedName = location.state.selectedName;
 
-  console.log(location);
+  //   console.log(location);
   // const id = location.pathname.split("/")[2];
 
   const handleDateChange = (newDate) => {
@@ -34,30 +30,22 @@ const HotelPage = () => {
     setDate(newDate);
   };
 
-  // , {
-  //   state: { selected, selectedName },
-  // }
-  const handleBook = () => {
-    navigate(`/hotel/8876/646545?type=${type}&name=${selectedName}`);
-  };
-
   return (
     <div>
       <Header />
-
       <div className="flex">
         <div>
           <aside className="h-100 pb-10 mx-5 mt-10 mb-10  rounded-2xl w-80 bg-yellow-400 top-0 p-5">
             <input
               className="w-full bg-white py-2 rounded-lg px-5 mt-7 "
               readOnly
-              value={type}
+              //   value={type}
             />
 
             <input
               className="w-full bg-white py-2 rounded-lg px-5 mt-7 "
               readOnly
-              value={selectedName}
+              //   value={selectedName}
             />
 
             <div className="py-3 mt-7 ">
@@ -76,7 +64,8 @@ const HotelPage = () => {
 
         <main className="h-screen overflow-auto w-full pt-10">
           <h2 className="shadow-lg uppercase  py-4 mx-5 rounded-lg bg-indigo-100 border border-indigo-200  text-center  tracking-tight text-xl  md:text-2xl">
-            {selectedName} is your home
+            {/* {selectedName} kig bed */}
+            book
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2  gap-4 w-full  p-4">
             {beds.map((val) => (
@@ -97,12 +86,12 @@ const HotelPage = () => {
                     >
                       {val[0]}
                     </a>
-                    <button
-                      onClick={handleBook}
+                    <a
+                      href=""
                       className="block px-3 py-1 my-1 text-center rounded-lg border  border-indigo-900  text-2xl font-semibold text-white "
                     >
                       Book
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -114,4 +103,4 @@ const HotelPage = () => {
   );
 };
 
-export default HotelPage;
+export default ReservePage;

@@ -7,10 +7,10 @@ import hotel3 from "../assets/images/hotel3.jpg";
 import hotel4 from "../assets/images/hotel4.jpg";
 import Header from "../components/Header";
 const types = [
-  ["resorts", "300", hotel1],
-  ["hotels", "300", hotel2],
-  ["apartments", "300", hotel3],
-  ["guest houses", "300", hotel4],
+  ["king bed", "3000", hotel1],
+  ["single bed", "2000", hotel2],
+  ["my ded", "1800", hotel3],
+  ["abcd bed", "3000", hotel4],
 ];
 
 const CityPage = () => {
@@ -18,6 +18,7 @@ const CityPage = () => {
     startDate: new Date(),
     endDate: new Date().setMonth(11),
   });
+
   const [selected, setSelected] = useState("");
   const [selectedName, setSelectedName] = useState("");
 
@@ -95,7 +96,7 @@ const CityPage = () => {
         </div>
 
         <main className="h-screen overflow-auto w-full pt-10">
-          <h2 className="shadow-xl uppercase  py-4 mx-5 rounded-lg bg-indigo-100 border border-indigo-200  text-center  tracking-tight text-xl  md:text-2xl">
+          <h2 className="shadow-lg uppercase  py-4 mx-5 rounded-lg bg-indigo-100 border border-indigo-200  text-center  tracking-tight text-xl  md:text-2xl">
             hotels in bahidar city
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2  gap-4 w-full  p-4">
