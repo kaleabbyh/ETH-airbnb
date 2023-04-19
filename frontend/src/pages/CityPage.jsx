@@ -24,9 +24,9 @@ const CityPage = () => {
   const navigate = useNavigate();
 
   const options = ["Choose", "resort", "Hotel", "apartment"];
-  const resort = ["Haile resort ", "abcd resort"];
-  const hotel = ["abcd hotel", "efg hotel", "hijk hotel"];
-  const apartment = ["asd apatment", "kafh apatment", "jgj apatment"];
+  const resort = ["Choose", "Haile resort ", "abcd resort"];
+  const hotel = ["Choose", "abcd hotel", "efg hotel", "hijk hotel"];
+  const apartment = ["Choose", "asd apatment", "kafh apatment", "jgj apatment"];
 
   const optionHandler = (event) => {
     setSelected(event.target.value);
@@ -50,7 +50,9 @@ const CityPage = () => {
   };
 
   const handleSearch = () => {
-    navigate("/hotel/4234", { state: { selected, selectedName } });
+    navigate(`/hotel/8876?type=${selected}&name=${selectedName}`, {
+      state: { selected, selectedName },
+    });
   };
 
   return (
