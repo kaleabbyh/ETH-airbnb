@@ -95,7 +95,7 @@ const CityPage = () => {
         </div>
 
         <main className="h-screen overflow-auto w-full pt-10">
-          <h2 className="text-2xl text-center font-bold tracking-tight tsm:text-4xl">
+          <h2 className="shadow-xl uppercase  py-4 mx-5 rounded-lg bg-indigo-100 border border-indigo-200  text-center  tracking-tight text-xl  md:text-2xl">
             hotels in bahidar city
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2  gap-4 w-full  p-4">

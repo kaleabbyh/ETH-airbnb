@@ -64,9 +64,8 @@ const HotelPage = () => {
         </div>
 
         <main className="h-screen overflow-auto w-full pt-10">
-          <h2 className="text-2xl text-center font-bold tracking-tight tsm:text-4xl">
-            {location.state.selectedName ? location.state.selectedName : ""} is
-            your home
+          <h2 className="shadow-xl uppercase  py-4 mx-5 rounded-lg bg-indigo-100 border border-indigo-200  text-center  tracking-tight text-xl  md:text-2xl">
+            {selectedName} is your home
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2  gap-4 w-full  p-4">
             {beds.map((val) => (
@@ -76,13 +75,13 @@ const HotelPage = () => {
                     className="rounded-lg inline-flex min-h-40 "
                     src={val[2]}
                   />
-                  <div className="absolute bottom-0 text-center px-4 py-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                    <span className="block text-2xl px-5 py-2 font-bold  text-white ">
+                  <div className="absolute grid grid-cols-1  text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                    <span className="p-1 md:py-2  text-lg md:text-2xl  font-bold  text-white ">
                       {val[1]} ETB
                     </span>
                     <a
                       href="#"
-                      className="block px-5 py-2 text-center rounded-md border border-indigo-900  text-2xl font-semibold text-white "
+                      className=" p-1 md:py-2 text-lg md:text-2xl text-center rounded-md border border-indigo-900  font-semibold text-white "
                     >
                       {val[0]}
                     </a>
