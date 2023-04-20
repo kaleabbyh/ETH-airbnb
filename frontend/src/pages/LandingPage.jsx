@@ -7,9 +7,8 @@ const mydata = ["hotel", "guest houses", "apartments", "resorts"];
 export default function LandingPage() {
   return (
     <div className="">
-      {/* <Header /> */}
       <div className="relative">
-        <img className="w-full" src={hotel2} />
+        <img className="w-full h-screen" src={hotel2} />
         <Link
           to="/home"
           className=" font-bold absolute text-2xl md:text-3xl lg:text-5xl text-white px-2 py-1 md:px-6 md:py-4 rounded-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"

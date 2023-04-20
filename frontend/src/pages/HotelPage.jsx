@@ -14,7 +14,7 @@ const beds = [
 ];
 const HotelPage = () => {
   const [selected, setSelected] = useState("");
-  const [bedName, setBedNaime] = useState("");
+  const [bed, setBedNaime] = useState("");
 
   const [date, setDate] = useState({
     startDate: new Date(),

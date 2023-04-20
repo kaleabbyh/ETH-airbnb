@@ -3,7 +3,17 @@ import Room from "../models/Room.js";
 
 export const createHotel = async (req, res, next) => {
   const newHotel = new Hotel(req.body);
+  const isExisted = await Hotel.find({
+    city: req.body.city,
+    name: req.body.name,
+  });
 
+  if (isExisted.length) {
+    console.log(req.body.city);
+    console.log(isExisted);
+    res.send(`${req.body.name} is already registered in ${req.body.city}`);
+    return;
+  }
   try {
     const savedHotel = await newHotel.save();
     res.status(200).json(savedHotel);
@@ -11,6 +21,7 @@ export const createHotel = async (req, res, next) => {
     next(err);
   }
 };
+
 export const updateHotel = async (req, res, next) => {
   try {
     const updatedHotel = await Hotel.findByIdAndUpdate(
