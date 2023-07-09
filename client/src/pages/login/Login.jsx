@@ -10,6 +10,12 @@ const Login = () => {
     password: undefined,
   });
 
+
+  //   const [credentials, setCredentials] = useState({
+  //   username: undefined,
+  //   password: undefined,
+  // });
+
   const { loading, error, dispatch } = useContext(AuthContext);
 
   const navigate = useNavigate();
