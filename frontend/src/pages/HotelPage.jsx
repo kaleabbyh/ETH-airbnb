@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Datepicker from "react-tailwindcss-datepicker";
-// import bed1 from "../assets/images/bed1.jpg";
-// import bed2 from "../assets/images/bed2.jpg";
-// import bed3 from "../assets/images/bed3.jpg";
-// import bed4 from "../assets/images/bed4.jpg";
-// import Header from "../components/Header";
+import bed1 from "../assets/images/bed1.jpg";
+import bed2 from "../assets/images/bed2.jpg";
+import bed3 from "../assets/images/bed3.jpg";
+import bed4 from "../assets/images/bed4.jpg";
+import Header from "../components/Header";
 const beds = [
   ["king bed", "3000", bed1],
   ["single bed", "2000", bed2],
